@@ -1,0 +1,33 @@
+###############################################################################
+# SPDX-License-Identifier: GPL-3.0-or-later
+###############################################################################
+
+config MSTORY_V2_0_SRC_LED_1
+    bool "MStory Version 2.0 Chapter LED ON OFF First Test "
+    default n
+
+config MSTORY_V2_0_SRC_LED_2
+    bool "MStory Version 2.0 Chapter LED ON OFF GPIO RESET SET Use"
+    default n
+
+config MSTORY_V2_0_SRC_LED_3
+    bool "MStory Version 2.0 Chapter LED OFF GPIO SET Use"
+    default n
+
+config MSTORY_V2_0_SRC_LED_4
+    bool "MStory Version 2.0 Chapter LED ON OFF ALL SET RESET Use"
+    default n
+
+config MSTORY_V2_0_SRC_LED_5
+    bool "MStory Version 2.0 Chapter LED ON OFF ALL Chnage coding style"
+    default n
+
+config MSTORY_V2_0_SRC_LED_6
+    bool "MStory Version 2.0 Chapter LED ON OFF ALL Change coding style version 2"
+    default n
+
+config MSTORY_V2_0_SRC_KEY_PRESS
+    bool "MStory Version 2.0 Chapter KEY PRESS "
+    default n
+
+###############################################################################

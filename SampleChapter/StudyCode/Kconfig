@@ -1,0 +1,15 @@
+###############################################################################
+# SPDX-License-Identifier: GPL-3.0-or-later
+###############################################################################
+
+
+menu "Select Sample Chapter Mango Story v2.0"
+    source "SampleChapter/StudyCode/MStory2.0/Kconfig"
+endmenu
+
+menu "Select Sample Chapter Mango Story v3.0"
+    depends on STANDARD_DRIVER
+    source "SampleChapter/StudyCode/MStory3.0/Kconfig"
+endmenu
+
+###############################################################################

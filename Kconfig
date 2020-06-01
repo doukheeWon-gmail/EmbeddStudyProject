@@ -1,0 +1,27 @@
+###############################################################################
+# SPDX-License-Identifier: GPL-3.0-or-later
+###############################################################################
+
+mainmenu "MANGO-Board M3 Configuration"
+
+menu "Select Board"
+    source "board/Kconfig"
+endmenu
+
+menu "Select Driver"
+    source "driver/Kconfig"
+endmenu
+
+menu "Select OS"
+    source "kernel/Kconfig"
+endmenu
+
+menu "Select Sample Chapter"
+    source "SampleChapter/Kconfig"
+endmenu
+
+config CUSTOM
+    string "Custom project name"
+    default ""
+
+###############################################################################

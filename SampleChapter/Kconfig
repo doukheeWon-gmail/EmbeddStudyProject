@@ -1,0 +1,17 @@
+###############################################################################
+# SPDX-License-Identifier: GPL-3.0-or-later
+###############################################################################
+
+
+
+menu "Select Simple Sample Chapter"
+    source "SampleChapter/StudyCode/Kconfig"
+endmenu
+
+
+menu "Select Simple Free RTOS Chapter"
+    depends on FREE_RTOS
+    source "SampleChapter/FreeRTOS_StudyCode/Kconfig"
+endmenu
+
+###############################################################################

@@ -1,0 +1,18 @@
+###############################################################################
+# SPDX-License-Identifier: GPL-3.0-or-later
+###############################################################################
+
+
+config MANGO_M3
+    bool "Select Board Mango-M3 Board"
+    default n
+
+config MANGO_Z1
+    bool "Select Board Mango-Z1 Board"
+    default n
+
+config NUCLEO
+    bool "Select Board Nucleo M3 Board"
+    default n
+
+###############################################################################
