@@ -80,12 +80,25 @@ else ifeq ($(CONFIG_MSTORY_V2_0_SRC_KEY_PRESS), y)
     SUB_ARCH :=
     SUB_ARCH += 07.M32.Src008.KeyPress/Src
 
-    SUB_ARCH := $(addprefix $(TOP)/SampleChapter/StudyCode/MStory2.o, $(SUB_ARCH))
+    SUB_ARCH := $(addprefix $(TOP)/SampleChapter/StudyCode/MStory2.0, $(SUB_ARCH))
 
     vpath %.c $(SUB_ARCH)
     vpath %.s $(SUB_ARCH)
 
     sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
+
+else ifeq ($(CONFIG_MSTORY_V2_0_SRC_HELLO_WORLD), y)
+    SUB_ARCH :=
+    SUB_ARCH += 08.M32.Src009.HelloWorld1/Src
+
+    SUB_ARCH := $(addprefix $(TOP)/SampleChapter/StudyCode/MStory2.0, $(SUB_ARCH))
+
+    vpath %.c $(SUB_ARCH)
+    vpath %.s $(SUB_ARCH)
+
+    sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
+
+else
 
 endif
 

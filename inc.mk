@@ -76,6 +76,7 @@ C_DEFS += \
 -D BOARD_DEF_MANGO_Z1
 endif
 
+#config mango-m3
 ifeq ($(CONFIG_MANGO_M3), y)
 C_DEFS += \
 -D BOARD_DEF_MANGO_M32

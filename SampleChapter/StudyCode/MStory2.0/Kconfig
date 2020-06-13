@@ -30,4 +30,8 @@ config MSTORY_V2_0_SRC_KEY_PRESS
     bool "MStory Version 2.0 Chapter KEY PRESS "
     default n
 
+config MSTORY_V2_0_SRC_HELLO_WORLD
+    bool "MStory Version 2.0 Chapter Hello World 1"
+    default n
+
 ###############################################################################

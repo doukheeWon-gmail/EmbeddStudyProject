@@ -60,4 +60,7 @@ clean:
 
 force:
 
+help:
+	@echo "menu config help"
+
 .PHONY: fixdep %config clean force

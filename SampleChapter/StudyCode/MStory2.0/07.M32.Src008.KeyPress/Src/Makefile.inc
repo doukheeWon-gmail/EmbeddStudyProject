@@ -11,4 +11,4 @@ KEY_PRESS_SOURCES += main.c
 
 EXTRAINCDIRS += $(TOP)/SampleChapter/StudyCode/MStory2.0/07.M32.Src008.KeyPress/Inc
 
-C_SOURCES += $()
+C_SOURCES += $(KEY_PRESS_SOURCES)

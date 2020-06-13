@@ -46,6 +46,8 @@ SUB_DIRS += CMSIS
 SUB_DIRS += driver
 SUB_DIRS += kernel
 SUB_DIRS += SampleChapter
+SUB_DIRS += module
+SUB_DIRS += project
 #SUB_DIRS += $(FOLDERS)
 
 #SUB_DIRS ADD USE KCONFIG
@@ -147,3 +149,4 @@ help:
 	@echo sizeinfo - "Get Binaray File Size"
 	@echo gccversion - "Get arm-none-eabi-gcc version Check"
 	@echo createdirs - "Make Object, Binary, hex file In Folder Name"	
+	@$(MAKE) -f scripts/Makefile help
