@@ -206,7 +206,7 @@ void EXTI0_IRQHandler(void)
 * Return         : None
 *******************************************************************************/
 
-static bool toggle_data_key2 = FALSE;
+
 
 void EXTI1_IRQHandler(void)
 {
