@@ -2,8 +2,10 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include "errno.h"
-#include "platform_config.h"
+
 #include "hw_config.h"
+
+/*
 
 __attribute__((used))
 int _getpid(void){
@@ -24,3 +26,5 @@ __attribute__((used))
 int close(int file){
     return -1;
 }
+
+*/
