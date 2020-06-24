@@ -6,5 +6,8 @@ config MSTORY_V3_0_SRC_LIB_DEBUG
     bool "MStory Version 3.0 Chapter Lib DEBUG"
     default n
 
+config MSTORY_V3_0_SRC_BIT_BAND
+    bool "MStory Version 3.0 Chapter Bit_Band"
+    default n
 
 ###############################################################################
