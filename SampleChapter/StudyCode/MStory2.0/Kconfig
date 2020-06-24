@@ -38,5 +38,8 @@ config MSTORY_V2_0_SRC_HELLO_WORLD_TWO
     bool "MStory Version 2.0 Chapter Hello World 2"
     default n
 
+config MSTORY_V2_0_SRC_GETCHAR
+    bool "MStory Version 2.0 Chapter Get Char "
+    default n
 
 ###############################################################################
