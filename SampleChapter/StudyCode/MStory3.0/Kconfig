@@ -2,6 +2,9 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 ###############################################################################
 
+config MSTORY_V3_0_SRC_LIB_DEBUG
+    bool "MStory Version 3.0 Chapter Lib DEBUG"
+    default n
 
 
 ###############################################################################
