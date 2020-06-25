@@ -121,6 +121,18 @@ else ifeq ($(CONFIG_MSTORY_V2_0_SRC_GETCHAR), y)
 
     sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
 
+else ifeq ($(CONFIG_MSTORY_V2_0_SRC_SEVEN_SEGMENT), y)
+
+    SUB_ARCH :=
+    SUB_ARCH += 11.M32.Src012.7_Segment/Src
+
+    SUB_ARCH := $(addprefix $(TOP)/SampleChapter/StudyCode/MStory2.0/, $(SUB_ARCH))
+
+    vpath %.c $(SUB_ARCH)
+    vpath %.s $(SUB_ARCH)
+
+    sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
+
 else
 
 endif

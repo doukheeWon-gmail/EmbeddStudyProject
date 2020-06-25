@@ -10,7 +10,6 @@
 /* includes */
 
 #include "platform_config.h"
-#include "stdio.h"
 
 /* functions */
 
@@ -325,30 +324,8 @@ void GPIO_Configuration(void)
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
     GPIO_Init(GPIO_LED, &GPIO_InitStructure);
 }
-/**
-#ifdef __GNUC__
-  #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
-#else
-  #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
-#endif 
 
-PUTCHAR_PROTOTYPE
-{
-    //Write a character to the USART
-    if( ch == '\n') {
-        USART_SendData(USART1, '\r');
-        while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
-        USART_SendData(USART1, '\r\n');
-    }else {
-        USART_SendData(USART1, (uint8_t) ch);
-    }
 
-    //Loop until the end of transmission
-    while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
-
-    return ch;
-}
-*/
 uint8_t USART_GetCharacter(USART_TypeDef *  usart_p)
 {
     uint8_t data;
@@ -389,9 +366,6 @@ int main(void)
 
     USART1_Init();
 
-    Serial_PutString("\r\r\nHello World! Hello Cortex-M3!\r\r\n");
-    printf("Hello Cortex-M3! with printf\r\n");
-
     while(1)
     {
         printf("\r\n---------------------\r\n");
@@ -401,6 +375,7 @@ int main(void)
         printf("---------------------\r\n");
         printf("1> LED Test\r\n");
         printf("2> KEY Test\r\n");
+        printf("3> 7-Segment Test\r\n");
         printf("---------------------\r\n");
         printf("x> quit\r\n\r\n");
 
@@ -419,6 +394,10 @@ int main(void)
 
         case '2':
             KEY_Test();
+            break;
+
+        case '3':
+            Seven_Segment_Test();
             break;
         }
 

@@ -2,9 +2,10 @@
 #ifndef __PLATFORM_CONFIG_H
 #define __PLATFORM_CONFIG_H
 
-/* Includes */
+/* includes */
 
 #include <stdint.h>
+#include <stdio.h>
 
 /* typedefs */
 
@@ -138,6 +139,7 @@ typedef struct
 
 #define USART_FLAG_TXE                       ((uint16_t)0x0080)
 #define USART_FLAG_RXNE                      ((uint16_t)0x0020)
+
 #define PERIPH_BASE           ((uint32_t)0x40000000) /*!< SRAM base address in the bit-band region */
 
 /*!< Peripheral memory map */
@@ -195,6 +197,7 @@ void LED_Off_All (void);
 
 void LED_Test (void);
 void KEY_Test (void);
+void Seven_Segment_Test (void);
 
 void delay_1_second(void);
 void delay_100_milli_second(void);

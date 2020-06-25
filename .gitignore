@@ -2,6 +2,15 @@
 
 #bin folder ignore
 
-#
+#config file 
+.config
 
-#
+#Build Object Folder
+build
+include
+
+#OBJECT FOLDER
+obj.makeProject
+
+#build Folder
+bin.makeProject
