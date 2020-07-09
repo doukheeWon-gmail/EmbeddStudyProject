@@ -38,7 +38,7 @@ int _read(int fd, char *ptr, int len){
         ++i;
     }
 
-    return i;
+    return len;
 }
 */
 /** scanf */
