@@ -1,38 +1,23 @@
-/*
- * (C) COPYRIGHT 2009 CRZ
- *
- * File Name : main.c
- * Author    : POOH
- * Version   : V1.0
- * Date      : 08/12/2009
- */
-
-/* includes */
-
 #include "hw_config.h"
-
-/* functions */
 
 extern __IO uint32_t StartUpCounter;
 
-void System_Information()
-{
-    printf("USART1->BRR : 0x%08X\r\n", USART1->BRR);
+void System_Information(){
+    RCC_ClocksTypeDef rcc_clocks;
     printf("StartUpCounter : %d\r\n", StartUpCounter);
+
+    RCC_GetClocksFreq(&rcc_clocks);
+    printf("SYSCLK_Frequency = %d\r\n",rcc_clocks.SYSCLK_Frequency );
+    printf("HCLK_Frequency = %d\r\n",rcc_clocks.HCLK_Frequency );
+    printf("PCLK1_Frequency = %d\r\n",rcc_clocks.PCLK1_Frequency );
+    printf("PCLK2_Frequency = %d\r\n",rcc_clocks.PCLK2_Frequency );
+    printf("ADCCLK_Frequency = %d\r\n",rcc_clocks.ADCCLK_Frequency );
 }
 
-/*
- * Name   : main
- * Input  : None
- * Output : None
- * Return : None
- */
-int main(void)
-{
+int main(void){
     uint8_t ch;
 
     RCC_Configuration();
-
     RCC->APB2ENR |= RCC_APB2Periph_GPIOA;
     RCC->APB2ENR |= RCC_APB2Periph_GPIOB;
     RCC->APB2ENR |= RCC_APB2Periph_USART1;

@@ -133,6 +133,28 @@ else ifeq ($(CONFIG_MSTORY_V2_0_SRC_SEVEN_SEGMENT), y)
 
     sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
 
+else ifeq ($(CONFIG_MSTORY_V2_0_SRC_CLOCK_SYSTEM), y)
+    SUB_ARCH :=
+    SUB_ARCH += 12.M32.Src013.ClockControl/Src
+
+    SUB_ARCH := $(addprefix $(TOP)/SampleChapter/StudyCode/MStory2.0/, $(SUB_ARCH))
+
+    vpath %.c $(SUB_ARCH)
+    vpath %.s $(SUB_ARCH)
+
+    sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
+
+else ifeq ($(CONFIG_MSTORY_V2_0_SRC_CLOCK_SYSTEM2), y)
+    SUB_ARCH := 
+    SUB_ARCH += 13.M32.Src014.ClockControl2/Src
+
+    SUB_ARCH := $(addprefix $(TOP)/SampleChapter/StudyCode/MStory2.0/, $(SUB_ARCH))
+
+    vpath %.c $(SUB_ARCH)
+    vpath %.s $(SUB_ARCH)
+
+    sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
+
 else
 
 endif
