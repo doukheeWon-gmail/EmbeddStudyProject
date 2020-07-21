@@ -3,10 +3,15 @@
 ###############################################################################
 
 
-config CMSIS_SAMPLE_Z1
+config CMSIS_SAMPLE_HELLO_WORLD_Z1
     bool "CMSIS Standard driver Start Sample Z1"
     default n
     select STANDARD_DRIVER
 
+config CMSIS_LED_KEY_CONTROL
+    bool "CMSIS Standard Driver LED KEY Control Z1"
+    default n
+    select STANDARD_DRIVER
+    
 
 ###############################################################################
