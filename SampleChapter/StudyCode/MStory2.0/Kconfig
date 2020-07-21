@@ -51,7 +51,15 @@ config MSTORY_V2_0_SRC_CLOCK_SYSTEM
     default n
 
 config MSTORY_V2_0_SRC_CLOCK_SYSTEM2
-    bool "MStory Version 2.0 CHapter clock system2"
+    bool "MStory Version 2.0 Chapter clock system2"
+    default n
+
+config MSTORY_V2_0_SRC_SYSCLOCK
+    bool "MStory Version 2.0 Chapter sys clock perfect 1 second delay"
+    default n
+
+config MSTORY_V2_0_SRC_EXTI
+    bool "MStory Versoin 2.0 Chapter EXTI Interrupt"
     default n
 
 ###############################################################################

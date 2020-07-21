@@ -155,6 +155,29 @@ else ifeq ($(CONFIG_MSTORY_V2_0_SRC_CLOCK_SYSTEM2), y)
 
     sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
 
+else ifeq ($(CONFIG_MSTORY_V2_0_SRC_SYSCLOCK), y)
+
+    SUB_ARCH := 
+    SUB_ARCH += 14.M32.Src015.SysTick/Src
+
+    SUB_ARCH := $(addprefix $(TOP)/SampleChapter/StudyCode/MStory2.0/, $(SUB_ARCH))
+
+    vpath %.c $(SUB_ARCH)
+    vpath %.s $(SUB_ARCH)
+
+    sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
+
+else ifeq ($(CONFIG_MSTORY_V2_0_SRC_EXTI), y)
+
+    SUB_ARCH :=
+    SUB_ARCH += 15.M32.Src016.KeyInterrupt/Src
+    SUB_ARCH := $(addprefix $(TOP)/SampleChapter/StudyCode/MStory2.0/, $(SUB_ARCH))
+
+    vpath %.c $(SUB_ARCH)
+    vpath %.s $(SUB_ARCH)
+
+    sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
+
 else
 
 endif
