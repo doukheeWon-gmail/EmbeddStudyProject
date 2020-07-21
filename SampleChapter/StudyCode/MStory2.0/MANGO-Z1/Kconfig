@@ -3,12 +3,10 @@
 ###############################################################################
 
 
-menu "Mango M-3 Board Sample Chapter MStory2.0"
-    source "SampleChapter/StudyCode/MStory2.0/MANGO-M3/Kconfig"
-endmenu
+config CMSIS_SAMPLE_Z1
+    bool "CMSIS Standard driver Start Sample Z1"
+    default n
+    select STANDARD_DRIVER
 
-menu "Mango Z-1 Board Sample Chapter MStroy2.0"
-    source "SampleChapter/StudyCode/MStory2.0/MANGO-Z1/Kconfig"
-endmenu
 
 ###############################################################################
