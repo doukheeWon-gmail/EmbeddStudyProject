@@ -14,6 +14,25 @@ getTTY(){
     done
 }
 
+#Mango Z1 Download Flash Loader
+ZigbeeDownload(){
+if [ -z "${ttys[0]}" ]
+    then
+        echo "Not Serial USB"
+    else
+        if [ -z "${BinFolder}" ]
+        then
+            if [ -z "${BinFile}" ]
+            then
+                ~/stm32ld ${ttys[0]} 115200 bin.makeProject/Sample.bin
+            else
+                ~/stm32ld ${ttys[0]} 115200 bin.makeProject/${BinFile}.bin
+            fi
+        else
+        ~/stm32ld ${ttys[0]} 115200 ${BinFolder}/${BinFile}.bin
+        fi
+    fi
+}
 
 #Download Command
 commandDownload()
@@ -22,6 +41,7 @@ commandDownload()
     if [ -z "${ttys[1]}" ]
     then
         echo "Not Serial USB"
+        ZigbeeDownload
     else
         if [ -z "${BinFolder}" ]
         then

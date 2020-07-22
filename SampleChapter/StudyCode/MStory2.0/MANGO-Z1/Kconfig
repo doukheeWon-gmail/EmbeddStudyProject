@@ -13,5 +13,14 @@ config CMSIS_LED_KEY_CONTROL
     default n
     select STANDARD_DRIVER
     
+config CMSIS_CLOCK_CONTROL
+    bool "CMSIS Standard Driver Clock Control Z1"
+    default n
+    select STANDARD_DRIVER
+
+config CMSIS_KEY_INTERRUPT
+    bool "CMSIS Standard Driver key interrupt push button Z1"
+    default n
+    select STANDARD_DRIVER
 
 ###############################################################################

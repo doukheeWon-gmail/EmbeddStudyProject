@@ -198,21 +198,21 @@ DEBUG = dwarf-2
 #CDEFS =  -D$(RUN_MODE)
 
 #Default define flag It is use CMSIS Driver
-C_DEFS = \
--D USE_STDPERIPH_DRIVER 
+# C_DEFS = \
+# -D USE_STDPERIPH_DRIVER 
 
-#board mango-z1
-ifeq ($(BOARD_NAME), mango-z1)
-C_DEFS += \
--D BOARD_DEF_MANGO_Z1
+# #board mango-z1
+# ifeq ($(BOARD_NAME), mango-z1)
+# C_DEFS += \
+# -D BOARD_DEF_MANGO_Z1
 
-else ifeq ($(BOARD_NAME), mango-m3)
-C_DEFS += \
--D BOARD_DEF_MANGO_M32
-else
-C_DEFS += \
--D BOARD_DEF_MANGO_M32
-endif
+# else ifeq ($(BOARD_NAME), mango-m3)
+# C_DEFS += \
+# -D BOARD_DEF_MANGO_M32
+# else
+# C_DEFS += \
+# -D BOARD_DEF_MANGO_M32
+# endif
 
 #Place -D or -U options for ASM here
 #ADEFS = -D$(RUN_MODE)

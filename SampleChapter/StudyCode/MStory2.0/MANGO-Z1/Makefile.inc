@@ -26,6 +26,29 @@ else ifeq ($(CONFIG_CMSIS_LED_KEY_CONTROL), y)
 
     sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
 
+else ifeq ($(CONFIG_CMSIS_CLOCK_CONTROL), y)
+
+    SUB_ARCH :=
+    SUB_ARCH += 03.Z1.Src003.ClockControl/Src
+
+    SUB_ARCH := $(addprefix $(TOP)/SampleChapter/StudyCode/MStory2.0/MANGO-Z1/, $(SUB_ARCH))
+
+    vpath %.c $(SUB_ARCH)
+    vpath %.s $(SUB_ARCH)
+
+    sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
+
+else ifeq ($(CONFIG_CMSIS_KEY_INTERRUPT), y)
+    SUB_ARCH := 
+    SUB_ARCH += 04.Z1.Src004.KeyInterrupt/Src
+
+    SUB_ARCH := $(addprefix $(TOP)/SampleChapter/StudyCode/MStory2.0/MANGO-Z1/, $(SUB_ARCH))
+
+    vpath %.c $(SUB_ARCH)
+    vpath %.s $(SUB_ARCH)
+
+    sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
+    
 else
 
 endif
