@@ -23,4 +23,9 @@ config CMSIS_KEY_INTERRUPT
     default n
     select STANDARD_DRIVER
 
+config CMSIS_IAP_BOOTLOADER
+    bool "CMSIS Standard Driver use IAP Boot Loader"
+    default n
+    select STANDARD_DRIVER
+
 ###############################################################################

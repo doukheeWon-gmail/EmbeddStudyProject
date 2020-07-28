@@ -48,7 +48,19 @@ else ifeq ($(CONFIG_CMSIS_KEY_INTERRUPT), y)
     vpath %.s $(SUB_ARCH)
 
     sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
-    
+
+else ifeq ($(CONFIG_CMSIS_IAP_BOOTLOADER), y)
+    SUB_ARCH :=
+    SUB_ARCH += 05.Z1.Src005.AN2557.IAP.BootLoader/Src
+
+    SUB_ARCH := $(addprefix $(TOP)/SampleChapter/StudyCode/MStory2.0/MANGO-Z1/, $(SUB_ARCH))
+
+    vpath %.s $(SUB_ARCH)
+    vpath %.c $(SUB_ARCH)
+
+    sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
+
+
 else
 
 endif
