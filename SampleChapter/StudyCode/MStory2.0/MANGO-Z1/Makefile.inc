@@ -60,7 +60,17 @@ else ifeq ($(CONFIG_CMSIS_IAP_BOOTLOADER), y)
 
     sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
 
+else ifeq ($(CONFIG_CMSIS_SPI_TEST), y)
+    SUB_ARCH := 
+    SUB_ARCH += 06.Z1.Src006.SPI.CC2520.ID/Src
 
+    SUB_ARCH := $(addprefix $(TOP)/SampleChapter/StudyCode/MStory2.0/MANGO-Z1/, $(SUB_ARCH))
+
+    vpath %.s $(SUB_ARCH)
+    vpath %.c $(SUB_ARCH)
+
+    sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
+    
 else
 
 endif

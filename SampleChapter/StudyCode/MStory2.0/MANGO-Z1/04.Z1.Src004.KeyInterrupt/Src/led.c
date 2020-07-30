@@ -1,11 +1,4 @@
-/*
- * (C) COPYRIGHT 2009 CRZ
- *
- * File Name : led.c
- * Author    : POOH
- * Version   : V1.0
- * Date      : 08/13/2009
- */
+
 
 /* includes */
 

@@ -28,4 +28,11 @@ config CMSIS_IAP_BOOTLOADER
     default n
     select STANDARD_DRIVER
 
+config CMSIS_SPI_TEST
+    bool "CMSIS Standard Driver Testing CC2520 zigbee chip(use mango-z1 board)"
+    default n
+    select STANDARD_DRIVER
+    select CC2520
+    select MANGO_Z1
+
 ###############################################################################

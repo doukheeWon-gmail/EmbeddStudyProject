@@ -12,6 +12,10 @@ menu "Select Driver"
     source "driver/Kconfig"
 endmenu
 
+menu "Select module"
+    source "module/Kconfig"
+endmenu
+
 menu "Select OS"
     source "kernel/Kconfig"
 endmenu
