@@ -9,6 +9,7 @@ CC2520_SOURCES += hal_cc2520.c
 CC2520_SOURCES += hal_int.c
 CC2520_SOURCES += hal_rf.c
 CC2520_SOURCES += hal_rf_security.c
+CC2520_SOURCES += util.c
 
 
 EXTRAINCDIRS += $(TOP)/module/cc2520/Inc

@@ -71,6 +71,17 @@ else ifeq ($(CONFIG_CMSIS_SPI_TEST), y)
 
     sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
     
+else ifeq ($(CONFIG_CMSIS_ZIGBEE_RX_TX_ONE_TEST), y)
+    SUB_ARCH := 
+    SUB_ARCH += 07.Z1.Src007.1ByteTxRx/Src
+
+    SUB_ARCH := $(addprefix $(TOP)/SampleChapter/StudyCode/MStory2.0/MANGO-Z1/, $(SUB_ARCH))
+
+    vpath %.s $(SUB_ARCH)
+    vpath %.c $(SUB_ARCH)
+
+    sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
+
 else
 
 endif

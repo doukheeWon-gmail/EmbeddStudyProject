@@ -35,4 +35,11 @@ config CMSIS_SPI_TEST
     select CC2520
     select MANGO_Z1
 
+config CMSIS_ZIGBEE_RX_TX_ONE_TEST
+    bool "CMSIS Standard Driver Testing CC2520 zigbee one byte rx tx test"
+    default n
+    select STANDARD_DRIVER
+    select CC2520
+    select MANGO_Z1
+
 ###############################################################################
