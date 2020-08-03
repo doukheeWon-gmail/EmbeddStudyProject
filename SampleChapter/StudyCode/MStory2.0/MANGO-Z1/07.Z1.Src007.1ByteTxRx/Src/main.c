@@ -61,7 +61,7 @@ int main(void)
         /* Capture error */ 
         while (1);
     }
-
+    LED_Off_All();
     printf("Mango Z1 test start...\n\n");
 
     while(1)
