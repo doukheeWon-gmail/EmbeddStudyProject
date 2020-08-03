@@ -3,11 +3,19 @@
 ###############################################################################
 
 config STANDARD_DRIVER
-    bool "Standard Driver Select"
+    bool "Standard Driver Select Core M3"
     default n
 
 config HAL_DRIVER
-    bool "Hal Driver Select"
+    bool "Hal Driver Select Core M3"
+    default n
+
+config STANDARD_DRIVER_M4
+    bool "Standard Driver Select Core M4"
+    default n
+
+config HAL_DRIVER_M4
+    bool "Hal Driver Select Core M4"
     default n
 
 ###############################################################################

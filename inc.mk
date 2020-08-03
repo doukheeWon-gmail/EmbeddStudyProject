@@ -82,6 +82,12 @@ C_DEFS += \
 -D BOARD_DEF_MANGO_M32
 endif
 
+ifeq ($(CONFIG_MANGO_M4), y)
+C_DEFS += \
+
+
+endif
+
 #Place -D or -U options for ASM here
 #ADEFS = -D$(RUN_MODE)
 #Assembler Define Flag 

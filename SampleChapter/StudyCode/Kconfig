@@ -8,8 +8,12 @@ menu "Select Sample Chapter Mango Story v2.0"
 endmenu
 
 menu "Select Sample Chapter Mango Story v3.0"
-    depends on STANDARD_DRIVER
     source "SampleChapter/StudyCode/MStory3.0/Kconfig"
 endmenu
+
+menu "Select Sample Chapter Mango-M32F4 Board"
+    source "SampleChapter/StudyCode/MANGOSTM32F4/Kconfig"
+endmenu
+
 
 ###############################################################################

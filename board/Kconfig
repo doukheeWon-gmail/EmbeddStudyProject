@@ -15,4 +15,8 @@ config NUCLEO
     bool "Select Board Nucleo M3 Board"
     default n
 
+config MANGO_M4
+    bool "Select Board Mango-M4 Board"
+    default n
+
 ###############################################################################

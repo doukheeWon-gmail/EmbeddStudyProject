@@ -79,9 +79,13 @@ sinclude $(addsuffix /Makefile.inc,$(SUB_DIRS))
 #    --cref:    add cross reference to  map file
 #LDFLAGS = -Map=$(TARGET).map --cref
 #Linker script flash 
+ifeq ($(CONFIG_MANGO_M4), y)
+FLASH_LDSCRIPT = LinkerScripts/stm32f407/STM32F407ZETx_FLASH.ld
+else
 FLASH_LDSCRIPT = LinkerScripts/stm32f10x103/STM32F103RBTx_FLASH.ld
 #Linker script rom 
 ROM_LDSCRIPT = LinkerScripts/stm32f10x103/STM32F103RBTx_ROM.ld
+endif
 #linker lib add float library add -spec=nano.spec -u_printf_float not use system file syscall file _write _read _getpid _close
 LD_LIBS = -lc -lm -lnosys -specs=nano.specs -u _printf_float -u _scanf_float -static
 #linker flag 
