@@ -42,4 +42,11 @@ config CMSIS_ZIGBEE_RX_TX_ONE_TEST
     select CC2520
     select MANGO_Z1
 
+config CMSIS_ONE_BYTE_RX_TX_TEST
+    bool "CMSIS Standard Driver Testing Multi Packet Transmit Rx Tx Test"
+    default n
+    select STANDARD_DRIVER
+    select CC2520
+    select MANGO_Z1
+
 ###############################################################################
