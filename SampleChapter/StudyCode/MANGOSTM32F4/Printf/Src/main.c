@@ -27,11 +27,12 @@ int main(void)
 {
 	uint32_t i;
 	USART_Configuration();
-	//USART_NVIC_Config();
+	USART_NVIC_Config();
 	i=0x1ffffff;
 	while (1)
 	{
-		printf("\r\nGCC Porting Test Printf\r\n");
+		printf("\r\n GCC TESTING\r\n");
+    
 		while(i--);
 		i=0x1ffffff;
 	}

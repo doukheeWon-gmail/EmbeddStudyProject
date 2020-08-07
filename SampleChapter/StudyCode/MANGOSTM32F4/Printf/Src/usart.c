@@ -29,8 +29,8 @@ void USART_Configuration(void)
   #else
   	RCC_APB1PeriphClockCmd(Open_USART_CLK,ENABLE);
   #endif	
-
-
+  
+  
   GPIO_PinAFConfig(Open_USART_TX_GPIO_PORT, Open_USART_TX_SOURCE, Open_USART_TX_AF);
   GPIO_PinAFConfig(Open_USART_RX_GPIO_PORT, Open_USART_RX_SOURCE, Open_USART_RX_AF);
 
