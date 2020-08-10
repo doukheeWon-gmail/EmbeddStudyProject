@@ -4,6 +4,7 @@
 
 #config file 
 .config
+.config.oldß
 
 #Build Object Folder
 build
