@@ -1,0 +1,98 @@
+#
+# Automatically generated file; DO NOT EDIT.
+# MANGO-Board M3 Configuration
+#
+
+#
+# Select Board
+#
+# CONFIG_MANGO_M3 is not set
+# CONFIG_MANGO_Z1 is not set
+# CONFIG_NUCLEO is not set
+CONFIG_MANGO_M4=y
+# end of Select Board
+
+#
+# Select Driver
+#
+# CONFIG_STANDARD_DRIVER is not set
+# CONFIG_HAL_DRIVER is not set
+CONFIG_STANDARD_DRIVER_M4=y
+# CONFIG_HAL_DRIVER_M4 is not set
+# end of Select Driver
+
+#
+# Select module
+#
+# CONFIG_CC2520 is not set
+# end of Select module
+
+#
+# Select OS
+#
+# CONFIG_FREE_RTOS is not set
+# end of Select OS
+
+#
+# Select Sample Chapter
+#
+
+#
+# Select Simple Sample Chapter
+#
+
+#
+# Select Sample Chapter Mango Story v2.0
+#
+
+#
+# Mango M-3 Board Sample Chapter MStory2.0
+#
+# CONFIG_MSTORY_V2_0_SRC_LED_1 is not set
+# CONFIG_MSTORY_V2_0_SRC_LED_2 is not set
+# CONFIG_MSTORY_V2_0_SRC_LED_3 is not set
+# CONFIG_MSTORY_V2_0_SRC_LED_4 is not set
+# CONFIG_MSTORY_V2_0_SRC_LED_5 is not set
+# CONFIG_MSTORY_V2_0_SRC_LED_6 is not set
+# CONFIG_MSTORY_V2_0_SRC_KEY_PRESS is not set
+# CONFIG_MSTORY_V2_0_SRC_HELLO_WORLD is not set
+# CONFIG_MSTORY_V2_0_SRC_HELLO_WORLD_TWO is not set
+# CONFIG_MSTORY_V2_0_SRC_GETCHAR is not set
+# CONFIG_MSTORY_V2_0_SRC_SEVEN_SEGMENT is not set
+# CONFIG_MSTORY_V2_0_SRC_CLOCK_SYSTEM is not set
+# CONFIG_MSTORY_V2_0_SRC_CLOCK_SYSTEM2 is not set
+# CONFIG_MSTORY_V2_0_SRC_SYSCLOCK is not set
+# CONFIG_MSTORY_V2_0_SRC_EXTI is not set
+# end of Mango M-3 Board Sample Chapter MStory2.0
+
+#
+# Mango Z-1 Board Sample Chapter MStroy2.0
+#
+# CONFIG_CMSIS_SAMPLE_HELLO_WORLD_Z1 is not set
+# CONFIG_CMSIS_LED_KEY_CONTROL is not set
+# CONFIG_CMSIS_CLOCK_CONTROL is not set
+# CONFIG_CMSIS_KEY_INTERRUPT is not set
+# CONFIG_CMSIS_IAP_BOOTLOADER is not set
+# CONFIG_CMSIS_SPI_TEST is not set
+# CONFIG_CMSIS_ZIGBEE_RX_TX_ONE_TEST is not set
+# CONFIG_CMSIS_ONE_BYTE_RX_TX_TEST is not set
+# end of Mango Z-1 Board Sample Chapter MStroy2.0
+# end of Select Sample Chapter Mango Story v2.0
+
+#
+# Select Sample Chapter Mango Story v3.0
+#
+# CONFIG_MSTORY_V3_0_SRC_LIB_DEBUG is not set
+# CONFIG_MSTORY_V3_0_SRC_BIT_BAND is not set
+# end of Select Sample Chapter Mango Story v3.0
+
+#
+# Select Sample Chapter Mango-M32F4 Board
+#
+CONFIG_PRINTF_TEST_M4=y
+# CONFIG_LED_TEST_M4 is not set
+# end of Select Sample Chapter Mango-M32F4 Board
+# end of Select Simple Sample Chapter
+# end of Select Sample Chapter
+
+CONFIG_CUSTOM=""

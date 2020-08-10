@@ -25,7 +25,7 @@
 
 int main(void)
 {
-  SystemInit();
+  //SystemInit();
 	uint32_t i;
 	USART_Configuration();
 	//USART_NVIC_Config();

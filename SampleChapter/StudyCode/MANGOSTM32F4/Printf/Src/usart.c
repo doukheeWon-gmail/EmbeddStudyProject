@@ -16,11 +16,11 @@ void USART_Configuration(void)
   RCC_AHB1PeriphClockCmd(Open_USART_TX_GPIO_CLK,ENABLE);
   RCC_AHB1PeriphClockCmd(Open_USART_RX_GPIO_CLK,ENABLE);
 
-  #ifdef	USART1_OPEN
+  
   	RCC_APB2PeriphClockCmd(Open_USART_CLK,ENABLE);
-  #else
-  	RCC_APB1PeriphClockCmd(Open_USART_CLK,ENABLE);
-  #endif	
+  
+  	//RCC_APB1PeriphClockCmd(Open_USART_CLK,ENABLE);
+  
 
 
   GPIO_PinAFConfig(Open_USART_TX_GPIO_PORT, Open_USART_TX_SOURCE, Open_USART_TX_AF);
