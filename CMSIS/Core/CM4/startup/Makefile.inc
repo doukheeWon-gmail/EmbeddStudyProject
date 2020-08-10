@@ -3,7 +3,7 @@
 ###########################################################
 
 CORE_SOURCES =
-#CORE_SOURCES += system_stm32f4xx.c
+CORE_SOURCES += system_stm32f4xx.c
 
 C_SOURCES += $(CORE_SOURCES)
 

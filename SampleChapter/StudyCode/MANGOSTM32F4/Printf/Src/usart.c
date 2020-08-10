@@ -1,13 +1,5 @@
 #include "usart.h"
 
-#ifdef __GNUC__
-  /* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf
-     set to 'Yes') calls __io_putchar() */
-  #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
-#else
-  #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
-#endif /* __GNUC__ */
-
 /*******************************************************************************
 * Function Name  : USART_Configuration
 * Description    : Configure Open_USART 
@@ -29,8 +21,8 @@ void USART_Configuration(void)
   #else
   	RCC_APB1PeriphClockCmd(Open_USART_CLK,ENABLE);
   #endif	
-  
-  
+
+
   GPIO_PinAFConfig(Open_USART_TX_GPIO_PORT, Open_USART_TX_SOURCE, Open_USART_TX_AF);
   GPIO_PinAFConfig(Open_USART_RX_GPIO_PORT, Open_USART_RX_SOURCE, Open_USART_RX_AF);
 
@@ -69,7 +61,7 @@ void USART_Configuration(void)
   USART_Init(Open_USART, &USART_InitStructure);
   /* Enable the Open_USART Transmit interrupt: this interrupt is generated when the 
      Open_USART transmit data register is empty */
-  USART_ITConfig(Open_USART,USART_IT_RXNE,ENABLE);
+  USART_ITConfig(Open_USART,USART_IT_RXNE, ENABLE);
 
   USART_Cmd(Open_USART, ENABLE);
 
@@ -87,35 +79,3 @@ void USART_NVIC_Config(void)
   NVIC_Init(&NVIC_InitStructure);
 }
 
-/* Use no semihosting */
-#if 1
-#pragma import(__use_no_semihosting)
-struct __FILE
-{  
-	int handle;
-};
-FILE __stdout;
-
-_sys_exit(int x)
-{
-	x = x;
-}
-#endif
-
-/**
-  * @brief  Retargets the C library printf function to the USART.
-  * @param  None
-  * @retval None
-  */
-PUTCHAR_PROTOTYPE
-{
-  /* Place your implementation of fputc here */
-  /* e.g. write a character to the USART */
-  USART_SendData(Open_USART, (uint8_t) ch);
-
-  /* Loop until the end of transmission */
-  while (USART_GetFlagStatus(Open_USART, USART_FLAG_TC) == RESET)
-  {}
-
-  return ch;
-}

@@ -25,14 +25,14 @@
 
 int main(void)
 {
+  SystemInit();
 	uint32_t i;
 	USART_Configuration();
-	USART_NVIC_Config();
+	//USART_NVIC_Config();
 	i=0x1ffffff;
 	while (1)
 	{
-		printf("\r\n GCC TESTING\r\n");
-    
+		printf("\r\nGCC Porting Test\r\n");
 		while(i--);
 		i=0x1ffffff;
 	}

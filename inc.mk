@@ -109,8 +109,8 @@ endif
 
 ifeq ($(CONFIG_MANGO_M4), y)
 C_DEFS += \
--D STM32F407xx
-#-D STM32F40_41xxx
+-D STM32F407xx \
+-D STM32F40_41xxx
 endif
 
 #Place -D or -U options for ASM here
