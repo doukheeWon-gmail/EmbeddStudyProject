@@ -93,6 +93,15 @@ else ifeq ($(CONFIG_CMSIS_ONE_BYTE_RX_TX_TEST), y)
 
     sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
 
-else
+else ifeq ($(CONFIG_CMSIS_USB_HID_TEST), y)
+    SUB_ARCH :=
+    SUB_ARCH += 09.Z1.Src009.USB.HID/Src
+
+    SUB_ARCH := $(addprefix $(TOP)/SampleChapter/StudyCode/MStory2.0/MANGO-Z1/, $(SUB_ARCH))
+
+    vpath %.s $(SUB_ARCH)
+    vpath %.c $(SUB_ARCH)
+
+    sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
 
 endif

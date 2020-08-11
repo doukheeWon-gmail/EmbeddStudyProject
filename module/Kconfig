@@ -7,4 +7,8 @@ config CC2520
     bool "cc2520 zigbee select"
     default n
 
+config USB_HID
+    bool "USB.HID Select"
+    default n
+
 ###############################################################################

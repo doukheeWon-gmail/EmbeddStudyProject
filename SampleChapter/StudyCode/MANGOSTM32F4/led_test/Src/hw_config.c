@@ -1,9 +1,29 @@
 #include "hw_config.h"
 
+void RCC_Configuration(){
+    SystemInit();
+    /* Enable GPIOA clock */
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
+    /* Enable GPIOB clock */
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
+    /* Enable GPIOC clock */
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
+    /* Enable GPIOD clock */
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
+    /* Enable GPIOE clock */
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
+    /* Enable GPIOF clock */
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOF, ENABLE);
+    /* Enable GPIOG clock */
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOG, ENABLE);
+    /* Enable GPIOH clock */
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOH, ENABLE);
+    /* Enable GPIOI clock */
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOI, ENABLE);
+}
+
 void GPIO_Configuration(){
     GPIO_InitTypeDef GPIO_InitStructure;
-    /** USART1 Pin clock Init */
-    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
     /** USART1 Clock Init */
   	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);
     /** Alternate function use setting */
@@ -43,14 +63,18 @@ void USART1_Init(){
 }
 
 void LED_Init(){
+    /** GPIO Configuration */
     GPIO_InitTypeDef GPIO_InitStructure;
-    /** LED Port Clock Init */
-    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOF, ENABLE);
-
+    /** GPIO LED PIN Configuration */
     GPIO_InitStructure.GPIO_Pin = GPIO_LED1_PIN | GPIO_LED2_PIN | GPIO_LED3_PIN;
+    /** GPIO Mode OUT PUT MODE */
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+    /** GPIO push-pull or open-drain setting */
     GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+    /** GPIO Speed Setting */
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    /** GPIO Push Up, Push Down, NOPull (Setting Push pull register) */
     GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+    /** GPIO Set */
     GPIO_Init(GPIO_LED_PORT, &GPIO_InitStructure);
 }

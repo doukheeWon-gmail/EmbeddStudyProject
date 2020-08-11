@@ -18,6 +18,7 @@ LIB_DEBUG_SOURCES =
 
 LIB_DEBUG_SOURCES += syscalls.c
 LIB_DEBUG_SOURCES += main.c
+LIB_DEBUG_SOURCES += cc2520_mango_porting.c
 
 EXTRAINCDIRS += $(TOP)/SampleChapter/MStory3.0/01.Lib_DEBUG/Inc
 

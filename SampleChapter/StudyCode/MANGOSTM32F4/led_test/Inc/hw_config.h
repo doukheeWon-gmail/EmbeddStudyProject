@@ -22,9 +22,16 @@ typedef enum{
     LED3 = 2
 } LED_TypeDef;
 
+void delay_int_count(volatile unsigned int nTime);
+void delay_1_second(void);
 
+void RCC_Configuration();
 void GPIO_Configuration();
 void USART1_Init();
+
 void BSP_LED_Init(LED_TypeDef LED);
+void BSP_LED_On_All(void);
+void BSP_LED_Off_All(void);
+void BSP_LED_Test(void);
 
 #endif

@@ -18,4 +18,8 @@ config HAL_DRIVER_M4
     bool "Hal Driver Select Core M4"
     default n
 
+config USB_FS_DEVICE_DRIVER
+    bool "USB FS Device Driver Select"
+    default n
+
 ###############################################################################
