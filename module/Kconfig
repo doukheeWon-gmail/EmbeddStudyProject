@@ -11,4 +11,12 @@ config USB_HID
     bool "USB.HID Select"
     default n
 
+config FAT_FS
+    bool "FAT FS library Select"
+    default n
+
+config LWIP_V2_12
+    bool "LwIP library Select"
+    default n
+
 ###############################################################################
