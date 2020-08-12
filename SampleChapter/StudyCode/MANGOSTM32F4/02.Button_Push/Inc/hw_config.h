@@ -49,7 +49,8 @@ void delay_1_second(void);
 
 void RCC_Configuration();
 void GPIO_Configuration();
-void NVIC_Init();
+void NVIC_Configuration();
+void EXTI_Configuration();
 void USART1_Init();
 
 void BSP_LED_Init(LED_TypeDef LED);

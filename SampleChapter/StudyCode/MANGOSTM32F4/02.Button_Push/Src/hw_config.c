@@ -62,6 +62,45 @@ void USART1_Init(){
     USART_Cmd(USART1, ENABLE);
 }
 
+void NVIC_Configuration(void){
+    /** Enable the EXTI Line Interrupt */
+    NVIC_InitTypeDef NVIC_InitStructure;
+    
+    NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x0);
+
+    NVIC_InitStructure.NVIC_IRQChannel = KEY_BUTTON_1_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+    
+    NVIC_InitStructure.NVIC_IRQChannel = KEY_BUTTON_2_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+}
+//TODO
+void EXTI_Configuration()
+{
+    EXTI_InitTypeDef EXTI_InitStructure;
+
+    //GPIO_EXTILineConfig(GPIOF, GPIO_PinSource9);
+    EXTI_InitStructure.EXTI_Line = EXTI_Line9;
+    EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
+    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;
+    EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+    EXTI_Init(&EXTI_InitStructure);
+
+    //GPIO_EXTILineConfig(GPIOF, GPIO_PinSource10);
+    EXTI_InitStructure.EXTI_Line = EXTI_Line10;
+    EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
+    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;
+    EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+    EXTI_Init(&EXTI_InitStructure);
+
+}
+
 void LED_Init(){
     /** GPIO Configuration */
     GPIO_InitTypeDef GPIO_InitStructure;
@@ -87,6 +126,8 @@ void KEY_Init(){
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
     /** GPIO Push-Pull or open-Drain Setting */
     GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+    /** GPIO Speed Setting */
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
     /** GPIO Init */
     GPIO_Init(KEY_BUTTON_1_GPIO_PORT, &GPIO_InitStructure);
 
@@ -96,6 +137,8 @@ void KEY_Init(){
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
     /** GPIO Push-Pull or open-Drain Setting */
     GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+    /** GPIO Speed Setting */
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
     /** GPIO Init */
     GPIO_Init(KEY_BUTTON_2_GPIO_PORT, &GPIO_InitStructure);
 
