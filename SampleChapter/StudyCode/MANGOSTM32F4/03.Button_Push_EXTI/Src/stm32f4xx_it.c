@@ -146,6 +146,31 @@ void SysTick_Handler(void)
 {
 }
 
+/**
+  * @brief  This function handles external line interrupt Handler.
+  * @param  None
+  * @retval None
+  */
+void EXTI9_5_IRQHandler(void)
+{
+    if(GPIO_ReadInputDataBit(GPIOF, GPIO_Pin_9) != SET){
+        printf("Button Pushed 1!\r\n");
+        EXTI_ClearITPendingBit(EXTI9_5_IRQn);
+    }
+}
+
+/**
+  * @brief  This function handles external line interrupt Handler.
+  * @param  None
+  * @retval None
+  */
+ void EXTI15_10_IRQHandler(void)
+ {
+     if(GPIO_ReadInputDataBit(GPIOF, GPIO_Pin_10) != SET){
+         printf("Button Pushed 2!\r\n");
+         EXTI_ClearITPendingBit(EXTI15_10_IRQn);
+     }
+ }
 /******************************************************************************/
 /*                 STM32F4xx Peripherals Interrupt Handlers                   */
 /*  Add here the Interrupt Handler for the used peripheral(s) (PPP), for the  */

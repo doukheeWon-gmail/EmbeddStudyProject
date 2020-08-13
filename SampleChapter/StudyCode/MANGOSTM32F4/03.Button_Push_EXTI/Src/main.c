@@ -21,6 +21,8 @@ int main(void){
     GPIO_Configuration();
     LED_Init();
     KEY_Init();
+    /** EXTI Configuration */
+    EXTI_Configuration();
     /** usart init */
     USART1_Init();
     RCC_GetClocksFreq(&rcc_clocks);
@@ -33,18 +35,9 @@ int main(void){
     }
 
     BSP_LED_Off_All();
-    printf("MANGO-M4 Board Testing GPIO Input Switch\r\n");
+    printf("MANGO-M4 Board Testing EXTI Testing\r\n");
     while(1){
-        //printf("testing\r\n");
-        
-        if(BSP_PB_GetState(BUTTON_KEY_1) == RESET){
-            printf("KEY1 Pushed\r\n ");
-        }
-
-        if(BSP_PB_GetState(BUTTON_KEY_2) == RESET){
-            printf("KEY2 Pushed\r\n ");
-        }
-        
+        ;
     }
     return 0;
 }

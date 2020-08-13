@@ -37,6 +37,16 @@ else ifeq ($(CONFIG_KEY_TEST_M4),y)
 
     sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
 
-else
+else ifeq ($(CONFIG_KEY_EXTI_TEST_M4), y)
+
+    SUB_ARCH :=
+    SUB_ARCH += 03.Button_Push_EXTI/Src
+
+    SUB_ARCH := $(addprefix $(TOP)/SampleChapter/StudyCode/MANGOSTM32F4/, $(SUB_ARCH))
+
+    vpath %.c $(SUB_ARCH)
+    vpath %.s $(SUB_ARCH)
+
+    sinclude $(addsuffix /Makefile.inc, $(SUB_ARCH))
 
 endif

@@ -19,4 +19,10 @@ config KEY_TEST_M4
     select STANDARD_DRIVER_M4
     default n
 
+config KEY_EXTI_TEST_M4
+    bool "Key Interrupt Mango-M4 Board Test"
+    select MANGO_M4
+    select STANDARD_DRIVER_M4
+    default n
+
 ###############################################################################

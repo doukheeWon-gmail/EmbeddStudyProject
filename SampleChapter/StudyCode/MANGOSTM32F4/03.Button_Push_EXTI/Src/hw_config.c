@@ -63,8 +63,46 @@ void USART1_Init(){
 }
 
 void NVIC_Configuration(void){
-    /** Set Vector Table Flash Memory */
+    /** Enable the EXTI Line Interrupt */
+    NVIC_InitTypeDef NVIC_InitStructure;
+    
     NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x0);
+
+    NVIC_InitStructure.NVIC_IRQChannel = KEY_BUTTON_1_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+    
+    NVIC_InitStructure.NVIC_IRQChannel = KEY_BUTTON_2_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+}
+//TODO
+void EXTI_Configuration()
+{
+    EXTI_InitTypeDef EXTI_InitStructure;
+    
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+
+    //GPIO_EXTILineConfig(GPIOF, GPIO_PinSource9);
+    SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOF, EXTI_PinSource9);
+    EXTI_InitStructure.EXTI_Line = EXTI_Line9;
+    EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
+    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;
+    EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+    EXTI_Init(&EXTI_InitStructure);
+
+    //GPIO_EXTILineConfig(GPIOF, GPIO_PinSource10);
+    SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOF, EXTI_PinSource10);
+    EXTI_InitStructure.EXTI_Line = EXTI_Line10;
+    EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
+    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;
+    EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+    EXTI_Init(&EXTI_InitStructure);
+
 }
 
 void LED_Init(){

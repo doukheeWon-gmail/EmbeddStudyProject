@@ -14,9 +14,11 @@
 
 #define KEY_BUTTON_1_GPIO_PORT      GPIOF
 #define KEY_BUTTON_1_PIN            GPIO_Pin_9
+#define KEY_BUTTON_1_IRQn           EXTI9_5_IRQn
 
 #define KEY_BUTTON_2_GPIO_PORT      GPIOF
 #define KEY_BUTTON_2_PIN            GPIO_Pin_10
+#define KEY_BUTTON_2_IRQn           EXTI15_10_IRQn
 
 #define USART1_PORT                 GPIOA
 #define USART1_TX_PIN               GPIO_Pin_9
@@ -48,6 +50,7 @@ void delay_1_second(void);
 void RCC_Configuration();
 void GPIO_Configuration();
 void NVIC_Configuration();
+void EXTI_Configuration();
 void USART1_Init();
 
 void BSP_LED_Init(LED_TypeDef LED);
