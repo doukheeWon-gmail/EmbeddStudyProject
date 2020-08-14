@@ -38,8 +38,8 @@ DRIVER_SOURCES += stm32f1xx_hal_spi_ex.c
 DRIVER_SOURCES += stm32f1xx_hal_spi.c
 DRIVER_SOURCES += stm32f1xx_hal_sram.c
 DRIVER_SOURCES += stm32f1xx_hal_tim.c
-DRIVER_SOURCES += stm32f1xx_hal_timebase_rtc_alarm_template.c
-DRIVER_SOURCES += stm32f1xx_hal_timebase_tim_template.c
+#DRIVER_SOURCES += stm32f1xx_hal_timebase_rtc_alarm_template.c
+#DRIVER_SOURCES += stm32f1xx_hal_timebase_tim_template.c
 DRIVER_SOURCES += stm32f1xx_hal_uart.c
 DRIVER_SOURCES += stm32f1xx_hal_usart.c
 DRIVER_SOURCES += stm32f1xx_hal_wwdg.c
@@ -63,7 +63,8 @@ DRIVER_SOURCES += stm32f1xx_ll_usb.c
 DRIVER_SOURCES += stm32f1xx_ll_utils.c
 
 #Include Header file
-EXTRAINCDIRS += $(TOP)/driver/STM32F1xx_HAL_Driver/Inc
+EXTRAINCDIRS += $(TOP)/driver/STM32F1xx_HAL_Driver/Inc \
+$(TOP)/driver/STM32F1xx_HAL_Driver/Legacy/Inc
 
 #include C source 
 C_SOURCES += $(DRIVER_SOURCES)

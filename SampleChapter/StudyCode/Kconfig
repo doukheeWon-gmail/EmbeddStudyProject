@@ -15,5 +15,9 @@ menu "Select Sample Chapter Mango-M32F4 Board"
     source "SampleChapter/StudyCode/MANGOSTM32F4/Kconfig"
 endmenu
 
+menu "Select Sample Chapter Hal Driver"
+    source "SampleChapter/StudyCode/Hal_EX/Kconfig"
+endmenu
+
 
 ###############################################################################

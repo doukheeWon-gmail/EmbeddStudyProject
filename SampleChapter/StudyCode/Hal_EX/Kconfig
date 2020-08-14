@@ -1,0 +1,13 @@
+###############################################################################
+# SPDX-License-Identifier: GPL-3.0-or-later
+###############################################################################
+
+menu "stm32F103 Board Hal Library Sample"
+    source "SampleChapter/StudyCode/Hal_EX/stm32F103/Kconfig"
+endmenu
+
+menu "stm32F4 Board Hal Library Sample"
+    source "SampleChapter/StudyCode/Hal_EX/stm32F4/Kconfig"
+endmenu
+
+###############################################################################

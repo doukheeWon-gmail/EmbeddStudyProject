@@ -32,6 +32,12 @@ REMOVE = $(REMOVE_CMD) -rf
 #####################################################################
 # CFLAGS
 #####################################################################
+CPU = -mcpu=cortex-m3
+
+#Floating point unit
+FPU = 
+
+FLOAT-ABI = 
 
 #Cpu architecture
 ifeq ($(CONFIG_MANGO_M3), y)
@@ -63,7 +69,15 @@ FPU = -mfpu=fpv4-sp-d16
 FLOAT-ABI = -mfloat-abi=hard
 
 endif
+ifeq ($(CONFIG_HAL_DRIVER_M4), y)
+CPU = -mcpu=cortex-m4
 
+# fpu
+FPU = -mfpu=fpv4-sp-d16
+# float-abi
+FLOAT-ABI = -mfloat-abi=hard
+
+endif
 
 #CPU Flag Setting 
 MCU = $(CPU) -mthumb $(FPU) $(FLOAT-ABI)
@@ -92,8 +106,30 @@ DEBUG = dwarf-2
 
 
 #Default define flag It is use CMSIS Driver
+ifeq ($(CONFIG_STANDARD_DRIVER), y)
 C_DEFS = \
 -D USE_STDPERIPH_DRIVER 
+endif
+
+#Default define flag It is use CMSIS Driver
+ifeq ($(CONFIG_STANDARD_DRIVER_M4), y)
+C_DEFS = \
+-D USE_STDPERIPH_DRIVER 
+endif
+
+#define flag It is use HAL Driver
+ifeq ($(CONFIG_HAL_DRIVER), y)
+C_DEFS = \
+-D USE_HAL_DRIVER \
+-D STM32F103xB
+endif
+
+#define flag It is use HAL Driver
+ifeq ($(CONFIG_HAL_DRIVER_M4), y)
+C_DEFS = \
+-D USE_HAL_DRIVER \
+-D STM32F407xx
+endif
 
 #board mango-z1
 ifeq ($(CONFIG_MANGO_Z1), y)
