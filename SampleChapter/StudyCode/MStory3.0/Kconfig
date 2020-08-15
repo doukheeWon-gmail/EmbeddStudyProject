@@ -6,15 +6,16 @@ config MSTORY_V3_0_SRC_LIB_DEBUG
     bool "MStory Version 3.0 Chapter Lib DEBUG"
     select STANDARD_DRIVER
     select CC2520
-    select MANGO_Z1
+    select USB_HID
+    select USB_FS_DEVICE_DRIVER
     default n
 
 config MSTORY_V3_0_SRC_BIT_BAND
     bool "MStory Version 3.0 Chapter Bit_Band"
     select STANDARD_DRIVER
     select CC2520
-    select MANGO_Z1
     select USB_HID
+    select USB_FS_DEVICE_DRIVER
     default n
 
 ###############################################################################

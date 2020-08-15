@@ -6,6 +6,9 @@
 #include "stm32f10x_it.h"
 #include "stdio.h"
 
+#include "debug.h"
+#include "lib_dbg.h"
+
 
 
 
@@ -51,7 +54,7 @@ extern bool g_TestProcessstate;
     #define GPIO_7_SEG_F_PIN        GPIO_Pin_5
     #define GPIO_7_SEG_G_PIN        GPIO_Pin_7
     #define GPIO_7_SEG_DP_PIN       GPIO_Pin_6
-#elif  BOARD_DEF_MANGO_Z1
+#elif BOARD_DEF_MANGO_Z1
     #define GPIO_RF_SPI_NCS_PIN        GPIO_Pin_4
     #define GPIO_RF_SPI_CLK_PIN        GPIO_Pin_5
     #define GPIO_RF_SPI_MISO_PIN       GPIO_Pin_6
@@ -83,6 +86,25 @@ extern bool g_TestProcessstate;
 void RCC_Configuration(void);
 void USART1_GPIOConfiguration(void);
 void USART1_Init(void);
+void NVIC_Configuration();
 
+void GPIO_Configuration(void);
+
+void LED_Test (void);
+void KEY_Test (void);
+
+
+void TimingDelay_Decrement(void);
+
+void delay_1_second(void);
+void delay_100_milli_second(void);
+void Delay(__IO uint32_t nTime);
+
+
+#ifdef BOARD_DEF_MANGO_M32
+    void Seven_Segment_Test(void);
+#elif  BOARD_DEF_MANGO_Z1
+    void SPIx_Init(void);
+#endif
 
 #endif

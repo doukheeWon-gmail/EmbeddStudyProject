@@ -7,6 +7,7 @@
 #include "stm32f10x_exti.h"
 #include "stm32f10x_gpio.h"
 
+#ifdef BOARD_DEF_MANGO_Z1
 void CC2520_GPIO_0_Interrupt_Setting(FunctionalState  fStateE)
 {
     NVIC_InitTypeDef NVIC_InitStructure;
@@ -88,3 +89,4 @@ void CC2520_SPI_WAIT_RXRDY(void)
     while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_RXNE) == RESET);
 }
 
+#endif

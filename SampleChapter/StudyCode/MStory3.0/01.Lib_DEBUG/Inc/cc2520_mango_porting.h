@@ -18,6 +18,8 @@
 
 /* Exported macro ------------------------------------------------------------*/
 
+#ifdef BOARD_DEF_MANGO_Z1
+
 #define HAL_INT_ON(x)      ;
 #define HAL_INT_OFF(x)     ;
 #define HAL_INT_LOCK(x)    ;
@@ -60,5 +62,17 @@ void CC2520_VREG_EN_OPIN(u8 data);
 void CC2520_SPI_TX(u8 data);
 u8 CC2520_SPI_RX(void);
 void CC2520_SPI_WAIT_RXRDY(void);
+
+
+#else
+
+#define GPIO_RF_GPIO0_4             0
+#define CC2520_SFD_PIN              0
+#define CC2520_TX_FRM_DONE_PIN      0
+#define GPIO_EXTI_Line_RF_GPIO0     0
+#define CC2520_SAMPLED_CCA_PIN      0
+#define CC2520_RSSI_VALID_PIN       0
+
+#endif
 
 #endif  /* __CC2520_MANGO_PORTING_H */

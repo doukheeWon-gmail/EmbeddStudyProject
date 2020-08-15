@@ -15,8 +15,23 @@ void SystemInformation(){
 int main(void){
     RCC_Configuration();
     RCC_GetClocksFreq(&rcc_clocks);
+    /* NVIC configuration */
+    NVIC_Configuration();
     USART1_Init();
+    GPIO_Configuration();
+    debug();
+    /* Setup SysTick Timer for 1 msec interrupts  */
+    if (SysTick_Config(rcc_clocks.SYSCLK_Frequency / 1000))
+    { 
+        /* Capture error */ 
+        while (1);
+    }
     SystemInformation();
+    LED_Off_All();
+    PowerOff_7_SEG();
+    LED_Test();
+    LED_Off_All();
+    //RCC_APB1PeriphClockCmd(RCC_APB2Periph_SPI1, ENABLE);
     while(1){
         ;
     }
