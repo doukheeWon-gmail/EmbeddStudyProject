@@ -18,4 +18,20 @@ config MSTORY_V3_0_SRC_BIT_BAND
     select USB_FS_DEVICE_DRIVER
     default n
 
+config MSTORY_V3_0_SRC_MODE_PRIVILEGE
+    bool "MStory Version 3.0 Chapter Mode Privilege"
+    select STANDARD_DRIVER
+    select CC2520
+    select USB_HID
+    select USB_FS_DEVICE_DRIVER
+    default n
+
+config MSTORY_V3_0_SRC_BASEPROGRAM_FORDFU
+    bool "MStory Version 3.0 Chapter Base programing for DFU"
+    select STANDARD_DRIVER
+    select CC2520
+    select USB_FS_DEVICE_DRIVER
+    select USB_HID
+    default n
+
 ###############################################################################
