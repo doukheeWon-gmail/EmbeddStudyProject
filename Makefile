@@ -49,6 +49,9 @@ SUB_DIRS += SampleChapter
 SUB_DIRS += module
 SUB_DIRS += project
 #SUB_DIRS += $(FOLDERS)
+#add personal proejct
+#project/$(COFNIG_CUSTOM)
+#SUB_DIRS += $(COFNIG_CUSTOM)
 
 #SUB_DIRS ADD USE KCONFIG
 SUB_DIRS += PersonalProject/$(CONFIG_SUB_DIRS_NAME)
